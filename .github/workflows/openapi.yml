@@ -1,0 +1,69 @@
+name: OpenAPI Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "openapi.yaml"
+      - ".github/workflows/openapi.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "openapi.yaml"
+      - "backend/**"
+      - ".github/workflows/openapi.yml"
+
+jobs:
+  validate:
+    name: Validate OpenAPI spec
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate openapi.yaml
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process')
+
+            // Install the validator
+            execSync('npm install -g @redocly/cli@latest', { stdio: 'inherit' })
+
+            // Run validation — exits non-zero on errors
+            try {
+              execSync('redocly lint openapi.yaml --format=github-actions', { stdio: 'inherit' })
+              console.log('✅ openapi.yaml is valid')
+            } catch (e) {
+              core.setFailed('openapi.yaml failed validation. Fix the errors above before merging.')
+            }
+
+      - name: Check spec is in sync with backend routes
+        # Lightweight check: every path in openapi.yaml should appear in the backend source.
+        # This catches the common mistake of updating the spec but forgetting the implementation (or vice versa).
+        run: |
+          python3 - <<'EOF'
+          import yaml, sys, pathlib, re
+
+          spec = yaml.safe_load(pathlib.Path("openapi.yaml").read_text())
+          backend_src = " ".join(
+              p.read_text() for p in pathlib.Path("backend").rglob("*.py")
+          )
+
+          missing = []
+          for path in spec.get("paths", {}):
+              # Strip path params: /api/menu/{itemId} → /api/menu/
+              normalized = re.sub(r"\{[^}]+\}", "", path).rstrip("/")
+              if normalized and normalized not in backend_src:
+                  missing.append(path)
+
+          if missing:
+              print("⚠️  These paths are in openapi.yaml but not found in backend source:")
+              for p in missing:
+                  print(f"  {p}")
+              print("Make sure the spec and implementation stay in sync.")
+              # Warning only — not a hard failure (path strings may appear differently)
+          else:
+              print("✅ All spec paths found in backend source")
+          EOF
