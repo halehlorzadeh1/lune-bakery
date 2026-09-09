@@ -1,0 +1,64 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200, 150, 90, 0.15);
+  transition: padding 0.3s ease;
+}
+
+.scrolled {
+  padding: 1rem 4rem;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--charcoal);
+}
+
+.logo span {
+  color: var(--caramel);
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.links a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--caramel);
+}
+
+.cta {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  border: 1px solid var(--caramel);
+  padding: 0.6rem 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.cta:hover {
+  background: var(--caramel);
+  color: var(--warm-white);
+}

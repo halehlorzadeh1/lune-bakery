@@ -1,0 +1,44 @@
+.footer {
+  background: var(--charcoal);
+  padding: 3rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(200,150,90,0.2);
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--warm-white);
+}
+
+.logo span {
+  color: var(--caramel-light);
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.links a {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--caramel-light);
+}
+
+.copy {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.25);
+}
