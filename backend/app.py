@@ -12,7 +12,7 @@ app = FastAPI(title="Lune Bakery API")
 # Allow requests from the Vite dev server
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000", "https://lune-bakery-frontend.onrender.com"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
