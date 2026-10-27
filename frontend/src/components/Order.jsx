@@ -2,10 +2,11 @@ import { useState } from 'react'
 import styles from './Order.module.css'
 
 const OCCASIONS = [
-  'Personal order',
-  'Birthday / celebration',
-  'Wedding',
-  'Corporate event',
+  'Restaurant',
+  'Hotel',
+  'Corporate office',
+  'Café or coffee shop',
+  'Event planning company',
   'Other',
 ]
 
@@ -41,28 +42,28 @@ export default function Order() {
   return (
     <section id="order" className={styles.section}>
       <div className={styles.info}>
-        <span className={styles.label}>Commande</span>
-        <h2 className={styles.title}>Place an<br /><em>order</em>.</h2>
+        <span className={styles.label}>Partenariat</span>
+        <h2 className={styles.title}>Become a<br /><em>partner</em>.</h2>
         <p className={styles.body}>
-          Orders require 48 hours notice. We do our best to accommodate
-          last-minute requests — just ask.
+          Tell us about your business and what you're looking for. We'll be in
+          touch within 24 hours to discuss volumes, delivery, and pricing.
         </p>
         <div className={styles.contactList}>
           <div className={styles.contactRow}>
-            <span className={styles.contactLabel}>Hours</span>
-            <span className={styles.contactVal}>Tue – Fri: 7am – 5pm<br />Sat – Sun: 7am – 3pm</span>
+            <span className={styles.contactLabel}>Delivery</span>
+            <span className={styles.contactVal}>Mon – Sat: early morning<br />Custom schedules available</span>
           </div>
           <div className={styles.contactRow}>
-            <span className={styles.contactLabel}>Phone</span>
-            <span className={styles.contactVal}>(555) 000-0000</span>
+            <span className={styles.contactLabel}>Minimums</span>
+            <span className={styles.contactVal}>Flexible — let's talk</span>
           </div>
           <div className={styles.contactRow}>
             <span className={styles.contactLabel}>Email</span>
-            <span className={styles.contactVal}>hello@lunebakery.com</span>
+            <span className={styles.contactVal}>partners@lunebakery.com</span>
           </div>
           <div className={styles.contactRow}>
-            <span className={styles.contactLabel}>Location</span>
-            <span className={styles.contactVal}>Coming soon — stay tuned.</span>
+            <span className={styles.contactLabel}>Response</span>
+            <span className={styles.contactVal}>Within 24 hours</span>
           </div>
         </div>
       </div>
@@ -97,7 +98,7 @@ export default function Order() {
         </div>
 
         <div className={styles.group}>
-          <label htmlFor="occasion">Occasion</label>
+          <label htmlFor="occasion">Business Type</label>
           <select id="occasion" name="occasion" value={form.occasion} onChange={handleChange}>
             <option value="">Select one</option>
             {OCCASIONS.map(o => <option key={o}>{o}</option>)}
@@ -105,21 +106,21 @@ export default function Order() {
         </div>
 
         <div className={styles.group}>
-          <label htmlFor="message">What would you like?</label>
+          <label htmlFor="message">Tell us about your needs</label>
           <textarea
             id="message" name="message"
-            placeholder="Tell us about your order, including quantity and any special requests…"
+            placeholder="What pastries are you interested in? Estimated weekly volume? Delivery location and schedule? Any specific requirements…"
             required
             value={form.message} onChange={handleChange}
           />
         </div>
 
         <button type="submit" className={styles.submit} disabled={status === 'loading'}>
-          {status === 'loading' ? 'Sending…' : 'Send Enquiry'}
+          {status === 'loading' ? 'Sending…' : 'Send Partnership Enquiry'}
         </button>
 
         {status === 'success' && (
-          <p className={styles.success}>Thank you — we'll be in touch within 24 hours.</p>
+          <p className={styles.success}>Thank you — a member of our team will be in touch within 24 hours.</p>
         )}
         {status === 'error' && (
           <p className={styles.error}>Something went wrong. Please try again or email us directly.</p>

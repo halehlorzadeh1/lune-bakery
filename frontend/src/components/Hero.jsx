@@ -4,17 +4,17 @@ export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.left}>
-        <p className={styles.eyebrow}>Pâtisserie Française · Artisan Pastries</p>
+        <p className={styles.eyebrow}>Wholesale Pâtisserie · B2B Supply</p>
         <h1 className={styles.title}>
-          The art of<br />the <em>perfect</em><br />pastry.
+          French pastry,<br />delivered to <em>your</em><br />business.
         </h1>
         <p className={styles.subtitle}>
-          Each creation is a small ceremony — layers of butter, patience, and tradition,
-          made by hand in the spirit of Paris.
+          We supply restaurants, hotels, corporate offices, and event planners
+          with handcrafted French pastries — made fresh daily, delivered reliably.
         </p>
         <div className={styles.actions}>
-          <a href="#menu" className={styles.btnPrimary}>Explore the Menu</a>
-          <a href="#about" className={styles.btnSecondary}>Our Story</a>
+          <a href="#order" className={styles.btnPrimary}>Become a Partner</a>
+          <a href="#menu" className={styles.btnSecondary}>View Wholesale Menu</a>
         </div>
       </div>
       <div className={styles.right}>

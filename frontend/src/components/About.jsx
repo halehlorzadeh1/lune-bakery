@@ -16,30 +16,30 @@ export default function About() {
         />
       </div>
       <div className={styles.content}>
-        <span className={styles.label}>Notre Histoire</span>
-        <h2 className={styles.title}>Born from a love<br />of <em>Paris</em>.</h2>
+        <span className={styles.label}>Why Partner With Us</span>
+        <h2 className={styles.title}>Your clients deserve<br /><em>exceptional</em> pastry.</h2>
         <div className={styles.divider} />
         <p className={styles.body}>
-          Lune began as an obsession — early mornings in a small kitchen, trying to recreate
-          the exact crunch of a croissant eaten on a Paris street. That pursuit of perfection
-          became a bakery.
+          Lune was built for businesses that refuse to compromise on quality. We supply
+          restaurants, hotels, corporate offices, and event planners with handcrafted
+          French pastries — made fresh each morning and delivered to your door.
         </p>
         <blockquote className={styles.quote}>
-          "Every layer of pastry holds a small secret. We take the time to find it."
+          "Your brand is only as good as the experience you put in front of your guests."
         </blockquote>
         <p className={styles.body}>
-          We source our butter from Normandy, our vanilla from Madagascar, and our inspiration
-          from the storied pâtisseries of the 6th arrondissement. Everything is made by hand,
-          in small batches, each morning.
+          We work with each partner to define the right assortment, volume, and delivery
+          schedule. Flexible minimum orders, dedicated account support, and consistent
+          quality — every single day.
         </p>
         <div className={styles.stats}>
           <div>
             <div className={styles.statNum}>04:00</div>
-            <div className={styles.statLabel}>We start baking</div>
+            <div className={styles.statLabel}>Fresh baked daily</div>
           </div>
           <div>
-            <div className={styles.statNum}>72h</div>
-            <div className={styles.statLabel}>Croissant dough</div>
+            <div className={styles.statNum}>48h</div>
+            <div className={styles.statLabel}>Onboarding time</div>
           </div>
           <div>
             <div className={styles.statNum}>100%</div>

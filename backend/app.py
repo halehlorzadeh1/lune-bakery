@@ -77,6 +77,27 @@ MENU_ITEMS = [
         "price": "$11",
         "image": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80&fit=crop",
     },
+    {
+        "id": 7,
+        "name": "Puff Pastry",
+        "description": "Feuilletage pur beurre · caramelised layers",
+        "price": "$7",
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop",
+    },
+    {
+        "id": 8,
+        "name": "Éclair",
+        "description": "Choux pastry · dark chocolate glaze · crème pâtissière",
+        "price": "$8",
+        "image": "https://images.unsplash.com/photo-1604413191066-4dd20bedf486?w=600&q=80&fit=crop",
+    },
+    {
+        "id": 9,
+        "name": "Opéra Cake",
+        "description": "Joconde sponge · coffee buttercream · dark chocolate ganache",
+        "price": "$12",
+        "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80&fit=crop",
+    },
 ]
 
 

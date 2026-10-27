@@ -16,11 +16,11 @@ export default function Nav() {
         Lune<span>.</span>
       </a>
       <ul className={styles.links}>
-        <li><a href="#menu">Menu</a></li>
+        <li><a href="#menu">Wholesale Menu</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#order">Order</a></li>
+        <li><a href="#order">Partner With Us</a></li>
       </ul>
-      <a href="#order" className={styles.cta}>Order Now</a>
+      <a href="#order" className={styles.cta}>Enquire Now</a>
     </nav>
   )
 }

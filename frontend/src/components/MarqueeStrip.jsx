@@ -1,9 +1,9 @@
 import styles from './MarqueeStrip.module.css'
 
 const items = [
-  'Crème Brûlée', 'Paris-Brest', 'Frangipane', 'Mille-Feuille',
-  'Croissant au Beurre', 'Tarte Citron', 'Éclair au Chocolat',
-  'Macaron', 'Kouign-Amann',
+  'Restaurant Supply', 'Hotel Amenities', 'Corporate Catering', 'Event Partnerships',
+  'Daily Delivery', 'Custom Volumes', 'Wholesale Pricing', 'Dedicated Account Manager',
+  'Café Wholesale',
 ]
 
 export default function MarqueeStrip() {
